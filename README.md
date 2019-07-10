@@ -22,22 +22,28 @@ In this project you will build out a calculator using React. You have been given
 
 This project was put together using create-react-app (CRA). You will not need to install CRA in order to make this project work. Follow the steps below to setup the project with the proper dependencies.
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
-- [ ] Clone your OWN version of the repository in your terminal
-- [ ] CD into the project base directory `cd component-calculator`
-- [ ] Download project dependencies by running one of these two commands `yarn` or `npm install`
-- [ ] Using the same command tool (yarn or npm) start up the app using `yarn start` or `npm start`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add your team lead as collaborator on Github.
+- [x] Clone your OWN version of the repository in your terminal
+- [x] CD into the project base directory `cd component-calculator`
+- [x] Download project dependencies by running one of these two commands `yarn` or `npm install`
+- [x] Using the same command tool (yarn or npm) start up the app using `yarn start` or `npm start`
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
       Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge Branch into master (student's Repository). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete by merging the branch back into master.
-- [ ] Do your magic!
+- [x] Submit a Pull-Request to merge Branch into master (student's Repository). **Please don't merge your own pull request**
+- [x] Add your team lead as a reviewer on the pull-request
+- [x] Your team lead will count the project as complete by merging the branch back into master.
+- [x] Do your magic!
+
+
+
+
+
+
 
 # _Project - NASA APOD - Part I_
 
@@ -45,6 +51,13 @@ Follow these steps for completing your project.
 - You will be starting from scratch and building the entire app
 - You don't have any design specs to follow for this project, so you may want to start by building a basic wireframe first. Make it simple at the beginning, since you don't know what data you'll be getting back from NASA
 - Once you get the data back, there may be more than you expected, or less than you expected, so your design plans may change. That's totally fine, and very normal in the real world. Just make the proper adjustments and move forward!
+
+
+
+
+
+
+
 
 ## Directions
 
@@ -70,6 +83,25 @@ Follow these steps for completing your project.
 - In your `.then()` make sure to console.log the response so you can get your first look at the data 😃
 - Before you add your data to state, make sure your effect hook has a dependency array (probably empty, since we don't want this effect synced up to any state/props), otherwise you will start an infinite loop, and you will exceed the API rate limits of the DEMO_KEY and need to use a real API_KEY:
 
+
+HTTP REQUEST
+GET https://api.nasa.gov/planetary/apod
+
+
+QUERY PARAMETERS
+Parameter   	Type	      Default	      Description
+
+date	        YYYY-MM-DD	today	        The date of the APOD image to retrieve
+hd	          bool	      False	        Retrieve the URL for the high resolution image
+api_key	      string	    DEMO_KEY	    api.nasa.gov key for expanded usage
+
+EXAMPLE QUERY
+https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
+
+
+
+
+
 DEMO KEY rate limits:
 
 > Hourly Limit: 30 requests per IP address per hour
@@ -78,6 +110,8 @@ DEMO KEY rate limits:
 
 _Note: if the photo url is NOT a photo, you will need to learn how to display a video in a React app on your own, OR just fetch the APOD from a different date by adding this to the back of the API endpoint: `&date=2012-03-14`_
 
+
+
 **STEP 4 - Adding the Data to State**
 
 - Once you have made the call correctly, and logged the data, add the data to the state property you built
@@ -85,10 +119,21 @@ _Note: if the photo url is NOT a photo, you will need to learn how to display a 
 **STEP 5 - Display the Data**
 Now is the time to build out your other components. Compose your UI, and then pass the data to your children components via props so you can render it on the DOM.
 
+
+
+
+
+
 ## _MVP Requirements:_
 
 - Use the effect hook to fetch the APOD data when the component mounts
 - Display the APOD data in different components that are composed together to build your UI
+
+
+
+
+
+
 
 ## Pro Tips:
 
@@ -105,6 +150,24 @@ return (
 ```
 
 - Read through the API docs carefully. You will read through technical docs a lot as a developer, so start now to try and understand them.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Stretch Problems
 
