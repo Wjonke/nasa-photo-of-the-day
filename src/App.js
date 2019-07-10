@@ -10,9 +10,8 @@ function App() {
     .then(res=> {
       console.log(res);
 
-      setPotd(
-        res
-      );
+      setPotd(res);
+
     })
     .catch(err => console.log("Error Will Robinson"));
   }, []);
@@ -22,12 +21,24 @@ function App() {
 
 
     <div className="App">
-      <h1>NASA Pick Of The Day!!</h1>
+      <header><h1>NASA Pick Of The Day!!</h1></header>
 
-      <img src={Potd.url} alt="Pick of the day!"/>
-      <div>{Potd.explanation}</div>
       
+      <section>
 
+        <h2>{Potd.title}</h2>
+        <p>Copyright: {Potd.copyright}: {Potd.date}</p>
+
+      </section>
+
+      <section>
+
+          <img src={Potd.hdurl} alt="Pick of the day!"/>
+          <p>{Potd.explanation}</p>
+          
+      </section>
+
+      <footer>footer Section</footer>
 
     </div>
 
