@@ -1,11 +1,14 @@
 import React, {useState, useEffect} from "react";
+import { Wrapper, Section, Footer, Header, P } from './AppStyle'
+
+
 
 
 function App() {
   const [Potd, setPotd] = useState([]);
 
   useEffect(() => {
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2012-03-14`)
+    fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
     .then(res => res.json())
     .then(res=> {
       console.log(res);
@@ -16,31 +19,29 @@ function App() {
     .catch(err => console.log("Error Will Robinson"));
   }, []);
 
+
+  
   return (
 
+    <Wrapper>
+      <Header>
+        <h1>NASA Pick Of The Day!!</h1>
+      </Header>
 
-
-    <div className="App">
-      <header><h1>NASA Pick Of The Day!!</h1></header>
-
-      
-      <section>
-
+      <Section>
         <h2>{Potd.title}</h2>
-        <p>Copyright: {Potd.copyright}: {Potd.date}</p>
+        <P>Copyright: {Potd.copyright}: {Potd.date}</P>
+      </Section>
 
-      </section>
+      <Section>
+          <img width= '75%' src={Potd.hdurl} alt="Pick of the day!"/>
+          <P>{Potd.explanation}</P>
+      </Section>
 
-      <section>
-
-          <img src={Potd.hdurl} alt="Pick of the day!"/>
-          <p>{Potd.explanation}</p>
-          
-      </section>
-
-      <footer>footer Section</footer>
-
-    </div>
+      <Footer>
+        Come Back tomorrow for another Pic!
+      </Footer>
+    </Wrapper>
 
 
 
